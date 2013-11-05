@@ -106,24 +106,6 @@ class OroEntityExtendBundle extends Bundle
 
     private function checkCache()
     {
-        $cacheDir = $this->kernel->getCacheDir() . '/entities';
-        if (!file_exists($cacheDir . '/entity_config.yml')
-            && (!isset($_SERVER['argv'])  || !in_array('oro:entity-extend:dump', $_SERVER['argv']))
-        ) {
-            if (file_exists($cacheDir . '/Extend/Entity/alias.yml')) {
-                unlink($cacheDir . '/Extend/Entity/alias.yml');
-            }
-            $console = escapeshellarg($this->getPhp()) . ' ' . escapeshellarg($this->kernel->getRootDir() . '/console');
-            $env     = $this->kernel->getEnvironment();
-
-            $process = new Process($console . ' oro:entity-extend:dump' . ' --env ' . $env);
-            $process->run();
-        }
-
-        if (count(scandir($cacheDir . '/Extend/Entity')) == 2) {
-            $generator = new Generator($cacheDir);
-            $generator->generate();
-        }
     }
 
     private function getPhp()
