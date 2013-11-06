@@ -70,6 +70,20 @@ class StepExecution
     /**
      * @var integer
      *
+     * @orm\column(name="creation_count", type="integer")
+     */
+    private $creationCount = 0;
+
+    /**
+     * @var integer
+     *
+     * @orm\column(name="update_count", type="integer")
+     */
+    private $updateCount = 0;
+
+    /**
+     * @var integer
+     *
      * @ORM\Column(name="filter_count", type="integer")
      */
     private $filterCount = 0;
@@ -281,6 +295,44 @@ class StepExecution
     public function incrementWriteCount()
     {
         $this->writeCount++;
+    }
+
+    /**
+     * Increment the creation count by 1
+     */
+    public function incrementCreationCount()
+    {
+        $this->creationCount++;
+        $this->incrementWriteCount();
+    }
+
+    /**
+     * Increment the update count by 1
+     */
+    public function incrementUpdateCount()
+    {
+        $this->updateCount++;
+        $this->incrementWriteCount();
+    }
+
+    /**
+     * Get the creation count
+     *
+     * @return int
+     */
+    public function getCreationCount()
+    {
+        return $this->creationCount;
+    }
+
+    /**
+     * Get the update count
+     *
+     * @return int
+     */
+    public function getUpdateCount()
+    {
+        return $this->updateCount;
     }
 
     /**
