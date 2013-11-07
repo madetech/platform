@@ -2,9 +2,9 @@
 
 namespace Oro\Bundle\GridBundle\Filter\ORM\Flexible;
 
-use Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManagerRegistry;
-use Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManager;
-use Oro\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository;
+use Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManagerRegistry;
+use Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManager;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository;
 
 use Oro\Bundle\GridBundle\Filter\FilterInterface;
 use Oro\Bundle\GridBundle\Filter\ORM\AbstractFilter;

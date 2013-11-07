@@ -1,6 +1,6 @@
 <?php
 
-namespace Oro\Bundle\FlexibleEntityBundle\Tests\Performance;
+namespace Pim\Bundle\FlexibleEntityBundle\Tests\Performance;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Doctrine\ORM\Tools\SchemaTool;

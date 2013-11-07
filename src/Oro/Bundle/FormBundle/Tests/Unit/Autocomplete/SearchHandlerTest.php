@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping\ClassMetadataFactory;
 use Doctrine\ORM\Mapping\ClassMetadata;
 use Doctrine\Common\Persistence\ManagerRegistry;
 
-use Oro\Bundle\FlexibleEntityBundle\Model\FlexibleValueInterface;
+use Pim\Bundle\FlexibleEntityBundle\Model\FlexibleValueInterface;
 
 use Oro\Bundle\SearchBundle\Engine\Indexer;
 
@@ -420,7 +420,7 @@ class SearchHandlerTest extends \PHPUnit_Framework_TestCase
 
     public function createMockFlexibleValue($data)
     {
-        $result = $this->getMock('Oro\Bundle\FlexibleEntityBundle\Model\FlexibleValueInterface');
+        $result = $this->getMock('Pim\Bundle\FlexibleEntityBundle\Model\FlexibleValueInterface');
         $result->expects($this->any())
             ->method('getData')
             ->will($this->returnValue($data));

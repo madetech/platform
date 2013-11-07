@@ -3,7 +3,7 @@
 namespace Oro\Bundle\SearchBundle\Engine;
 
 use Symfony\Component\PropertyAccess\PropertyAccess;
-use Oro\Bundle\FlexibleEntityBundle\AttributeType\AbstractAttributeType;
+use Pim\Bundle\FlexibleEntityBundle\AttributeType\AbstractAttributeType;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
@@ -152,14 +152,14 @@ abstract class AbstractMapper
      */
     protected function setFlexibleFields($alias, $object, $objectData, $managerName)
     {
-        /** @var $flexibleManager \Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManager */
+        /** @var $flexibleManager \Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManager */
         $flexibleManager = $this->container->get($managerName);
         if ($flexibleManager) {
             $attributes = $flexibleManager->getAttributeRepository()
                 ->findBy(array('entityType' => $flexibleManager->getFlexibleName()));
 
             if (count($attributes)) {
-                /** @var $attribute \Oro\Bundle\FlexibleEntityBundle\Entity\Attribute */
+                /** @var $attribute \Pim\Bundle\FlexibleEntityBundle\Entity\Attribute */
                 foreach ($attributes as $attribute) {
                     if ($attribute->getSearchable() && $value = $object->getValue($attribute->getCode())) {
                         $attributeType = $attribute->getBackendType();

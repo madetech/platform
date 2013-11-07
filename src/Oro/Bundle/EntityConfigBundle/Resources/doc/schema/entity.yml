@@ -1,6 +1,6 @@
 Oro\Bundle\UserBundle\Entity\User:                                    #entity.class_name
     extend:
-        class:                              Oro\Bundle\FlexibleBundle\Entity\UserExtend  #entity_config.extend
+        class:                              Pim\Bundle\FlexibleBundle\Entity\UserExtend  #entity_config.extend
     fields:
         firstname:                                                    #entity_field.code
             extend:                                                   #entity_field_meta.scope

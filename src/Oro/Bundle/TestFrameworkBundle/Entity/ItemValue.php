@@ -1,7 +1,7 @@
 <?php
 namespace Oro\Bundle\TestFrameworkBundle\Entity;
 
-use Oro\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityFlexibleValue;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityFlexibleValue;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
@@ -12,9 +12,9 @@ use Doctrine\Common\Collections\ArrayCollection;
 class ItemValue extends AbstractEntityFlexibleValue
 {
     /**
-     * @var \Oro\Bundle\FlexibleEntityBundle\Entity\Attribute $attribute
+     * @var \Pim\Bundle\FlexibleEntityBundle\Entity\Attribute $attribute
      *
-     * @ORM\ManyToOne(targetEntity="Oro\Bundle\FlexibleEntityBundle\Entity\Attribute")
+     * @ORM\ManyToOne(targetEntity="Pim\Bundle\FlexibleEntityBundle\Entity\Attribute")
      * @ORM\JoinColumn(name="attribute_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $attribute;
@@ -31,7 +31,7 @@ class ItemValue extends AbstractEntityFlexibleValue
      *
      * @var options ArrayCollection
      *
-     * @ORM\ManyToMany(targetEntity="Oro\Bundle\FlexibleEntityBundle\Entity\AttributeOption")
+     * @ORM\ManyToMany(targetEntity="Pim\Bundle\FlexibleEntityBundle\Entity\AttributeOption")
      * @ORM\JoinTable(
      *     name="test_search_item_value_option",
      *     joinColumns={@ORM\JoinColumn(name="value_id", referencedColumnName="id", onDelete="CASCADE")},

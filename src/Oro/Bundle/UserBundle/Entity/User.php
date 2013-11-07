@@ -16,7 +16,7 @@ use JMS\Serializer\Annotation\Exclude;
 
 use BeSimple\SoapBundle\ServiceDefinition\Annotation as Soap;
 
-use Oro\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityFlexible;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityFlexible;
 
 use Oro\Bundle\DataAuditBundle\Metadata\Annotation as Oro;
 
@@ -40,7 +40,7 @@ use DateTime;
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)
  * @SuppressWarnings(PHPMD.ExcessiveClassLength)
  * @SuppressWarnings(PHPMD.TooManyFields)
- * @ORM\Entity(repositoryClass="Oro\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository")
+ * @ORM\Entity(repositoryClass="Pim\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository")
  * @ORM\Table(name="oro_user")
  * @ORM\HasLifecycleCallbacks()
  * @Oro\Loggable
@@ -274,7 +274,7 @@ class User extends AbstractEntityFlexible implements
     protected $groups;
 
     /**
-     * @var \Oro\Bundle\FlexibleEntityBundle\Model\AbstractFlexibleValue[]
+     * @var \Pim\Bundle\FlexibleEntityBundle\Model\AbstractFlexibleValue[]
      *
      * @ORM\OneToMany(targetEntity="UserValue", mappedBy="entity", cascade={"persist", "remove"}, orphanRemoval=true)
      * @Exclude

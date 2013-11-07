@@ -7,7 +7,7 @@ services:
         class: %oro_soap.request.class%
         scope: request
         arguments:
-            - @oro_flexibleentity.registry
+            - @pim_flexibleentity.registry
 
     besimple.soap.definition.loader.yml_file:
         class:                        %oro_soap.loader_yml.class%

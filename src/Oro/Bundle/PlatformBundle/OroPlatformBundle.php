@@ -13,7 +13,6 @@ class OroPlatformBundle extends Bundle
     {
         return array(
             new \Oro\Bundle\SecurityBundle\OroSecurityBundle(),
-            new \Oro\Bundle\FlexibleEntityBundle\OroFlexibleEntityBundle(),
             new \Oro\Bundle\UIBundle\OroUIBundle(),
             new \Oro\Bundle\FormBundle\OroFormBundle(),
             new \Oro\Bundle\JsFormValidationBundle\OroJsFormValidationBundle(),

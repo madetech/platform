@@ -1,6 +1,6 @@
 parameters:
     oro_user.manager.class:             Oro\Bundle\UserBundle\Entity\UserManager
-    oro_user.manager.flexible.class:    Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManager
+    oro_user.manager.flexible.class:    Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManager
     oro_user.manager.api.class:         Oro\Bundle\SoapBundle\Entity\Manager\ApiFlexibleEntityManager
     oro_user.status.manager.class:      Oro\Bundle\UserBundle\Entity\Manager\StatusManager
     oro_user.entity.class:              Oro\Bundle\UserBundle\Entity\User
@@ -26,16 +26,16 @@ parameters:
 services:
     oro_user.manager.flexible:
         class:                        "%oro_user.manager.flexible.class%"
-        arguments:                    [%oro_user.entity.class%, %oro_flexibleentity.flexible_config%, "@doctrine.orm.entity_manager", "@event_dispatcher", @oro_flexibleentity.attributetype.factory]
+        arguments:                    [%oro_user.entity.class%, %pim_flexibleentity.flexible_config%, "@doctrine.orm.entity_manager", "@event_dispatcher", @pim_flexibleentity.attributetype.factory]
         tags:
-            - { name: oro_flexibleentity_manager, entity: %oro_user.entity.class%}
+            - { name: pim_flexibleentity_manager, entity: %oro_user.entity.class%}
         calls:
-            - [ addAttributeType, ['oro_flexibleentity_text'] ]
-            - [ addAttributeType, ['oro_flexibleentity_textarea'] ]
-            - [ addAttributeType, ['oro_flexibleentity_money'] ]
-            - [ addAttributeType, ['oro_flexibleentity_simpleselect'] ]
-            - [ addAttributeType, ['oro_flexibleentity_multiselect'] ]
-            - [ addAttributeType, ['oro_flexibleentity_url'] ]
+            - [ addAttributeType, ['pim_flexibleentity_text'] ]
+            - [ addAttributeType, ['pim_flexibleentity_textarea'] ]
+            - [ addAttributeType, ['pim_flexibleentity_money'] ]
+            - [ addAttributeType, ['pim_flexibleentity_simpleselect'] ]
+            - [ addAttributeType, ['pim_flexibleentity_multiselect'] ]
+            - [ addAttributeType, ['pim_flexibleentity_url'] ]
 
     oro_user.manager:
         class:                        %oro_user.manager.class%
@@ -113,9 +113,9 @@ services:
         arguments:
             - "user"
             - "oro_user_select"
-            - @oro_flexibleentity.validator.attribute_constraint_guesser
+            - @pim_flexibleentity.validator.attribute_constraint_guesser
         tags:
-            - { name: oro_flexibleentity.attributetype, alias: oro_user_attribute_user }
+            - { name: pim_flexibleentity.attributetype, alias: oro_user_attribute_user }
 
     oro_user.entity_with_image.subscriber:
         class: %oro_user.entity_with_image.subscriber.class%

@@ -17,8 +17,8 @@ use Oro\Bundle\EntityConfigBundle\Provider\ConfigProvider;
 use Oro\Bundle\DataAuditBundle\Entity\Audit;
 use Oro\Bundle\DataAuditBundle\Metadata\ClassMetadata;
 
-use Oro\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityFlexible;
-use Oro\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityFlexibleValue;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityFlexible;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityFlexibleValue;
 
 /**
  * @SuppressWarnings(PHPMD.ExcessiveClassComplexity)

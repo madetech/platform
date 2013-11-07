@@ -1,7 +1,7 @@
 <?php
 namespace Oro\Bundle\SearchBundle\Tests\Unit\Engine\Orm;
 
-use Oro\Bundle\FlexibleEntityBundle\AttributeType\AbstractAttributeType;
+use Pim\Bundle\FlexibleEntityBundle\AttributeType\AbstractAttributeType;
 
 use Oro\Bundle\SearchBundle\Engine\ObjectMapper;
 
@@ -109,7 +109,7 @@ class ObjectMapperTest extends \PHPUnit_Framework_TestCase
             ->setCreateDate(new \DateTime());
 
         $this->flexibleManager = $this
-            ->getMockBuilder('Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManager')
+            ->getMockBuilder('Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManager')
             ->disableOriginalConstructor()
             ->getMock();
 

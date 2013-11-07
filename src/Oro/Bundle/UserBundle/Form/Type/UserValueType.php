@@ -2,7 +2,7 @@
 
 namespace Oro\Bundle\UserBundle\Form\Type;
 
-use Oro\Bundle\FlexibleEntityBundle\Form\Type\FlexibleValueType;
+use Pim\Bundle\FlexibleEntityBundle\Form\Type\FlexibleValueType;
 
 class UserValueType extends FlexibleValueType
 {

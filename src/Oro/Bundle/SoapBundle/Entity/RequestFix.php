@@ -4,9 +4,9 @@ namespace Oro\Bundle\SoapBundle\Entity;
 
 use Doctrine\Common\Persistence\ObjectRepository;
 use Doctrine\Common\Util\ClassUtils;
-use Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManagerRegistry;
+use Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManagerRegistry;
 use Symfony\Component\HttpFoundation\Request;
-use Oro\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityAttribute;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityAttribute;
 
 class RequestFix
 {
@@ -50,8 +50,8 @@ class RequestFix
                 if (in_array(
                     $attr->getAttributeType(),
                     array(
-                        'oro_flexibleentity_multiselect',
-                        'oro_flexibleentity_multicheckbox',
+                        'pim_flexibleentity_multiselect',
+                        'pim_flexibleentity_multicheckbox',
                     )
                 )) {
                     $type = 'options';

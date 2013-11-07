@@ -12,7 +12,7 @@ use Doctrine\ORM\QueryBuilder;
 use Doctrine\Common\Persistence\ObjectRepository;
 use Doctrine\Common\Persistence\ObjectManager;
 
-use Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManager;
+use Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManager;
 
 class UserManager implements UserProviderInterface
 {

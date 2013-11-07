@@ -1,20 +1,20 @@
 <?php
-namespace Oro\Bundle\FlexibleEntityBundle\Tests\Performance;
+namespace Pim\Bundle\FlexibleEntityBundle\Tests\Performance;
 
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
-use Oro\Bundle\FlexibleEntityBundle\Model\AbstractAttributeType;
+use Pim\Bundle\FlexibleEntityBundle\Model\AbstractAttributeType;
 use Acme\Bundle\DemoFlexibleEntityBundle\Entity\ProductAttribute;
-use Oro\Bundle\FlexibleEntityBundle\Model\AttributeType\TextType;
-use Oro\Bundle\FlexibleEntityBundle\Model\AttributeType\OptionMultiCheckboxType;
-use Oro\Bundle\FlexibleEntityBundle\Model\AttributeType\MetricType;
-use Oro\Bundle\FlexibleEntityBundle\Model\AttributeType\TextAreaType;
-use Oro\Bundle\FlexibleEntityBundle\Model\AttributeType\PriceType;
-use Oro\Bundle\FlexibleEntityBundle\Entity\Price;
-use Oro\Bundle\FlexibleEntityBundle\Entity\Metric;
+use Pim\Bundle\FlexibleEntityBundle\Model\AttributeType\TextType;
+use Pim\Bundle\FlexibleEntityBundle\Model\AttributeType\OptionMultiCheckboxType;
+use Pim\Bundle\FlexibleEntityBundle\Model\AttributeType\MetricType;
+use Pim\Bundle\FlexibleEntityBundle\Model\AttributeType\TextAreaType;
+use Pim\Bundle\FlexibleEntityBundle\Model\AttributeType\PriceType;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Price;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Metric;
 
 /**
 * Load products

@@ -3,7 +3,7 @@
 namespace Oro\Bundle\GridBundle\Tests\Unit\Datagrid;
 
 use Oro\Bundle\GridBundle\Datagrid\FlexibleDatagridManager;
-use Oro\Bundle\FlexibleEntityBundle\AttributeType\AbstractAttributeType;
+use Pim\Bundle\FlexibleEntityBundle\AttributeType\AbstractAttributeType;
 
 class FlexibleDatagridManagerTest extends \PHPUnit_Framework_TestCase
 {
@@ -51,7 +51,7 @@ class FlexibleDatagridManagerTest extends \PHPUnit_Framework_TestCase
         $this->model->setParameters($parametersMock);
 
         $flexibleManagerMock = $this->getMock(
-            'Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManager',
+            'Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManager',
             array('setLocale', 'setScope'),
             array(),
             '',

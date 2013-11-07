@@ -2,9 +2,9 @@
 
 namespace Oro\Bundle\GridBundle\Tests\Unit\Sorter\ORM\Flexible;
 
-use Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManagerRegistry;
-use Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManager;
-use Oro\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository;
+use Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManagerRegistry;
+use Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManager;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository;
 
 use Oro\Bundle\GridBundle\Field\FieldDescription;
 use Oro\Bundle\GridBundle\Sorter\SorterInterface;
@@ -25,7 +25,7 @@ class FlexibleSorterTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         $this->flexibleRegistry = $this->getMockBuilder(
-            'Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManagerRegistry'
+            'Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManagerRegistry'
         )->setMethods(array('getManager'))->getMock();
 
         $this->flexibleSorter = new FlexibleSorter($this->flexibleRegistry);
@@ -133,7 +133,7 @@ class FlexibleSorterTest extends \PHPUnit_Framework_TestCase
      */
     private function createFlexibleManager()
     {
-        $flexibleManager = $this->getMockBuilder('Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManager')
+        $flexibleManager = $this->getMockBuilder('Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManager')
             ->disableOriginalConstructor()
             ->setMethods(array('getFlexibleRepository'))
             ->getMock();
@@ -146,7 +146,7 @@ class FlexibleSorterTest extends \PHPUnit_Framework_TestCase
     private function createFlexibleEntityRepository()
     {
         $flexibleManager = $this->getMockBuilder(
-            'Oro\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository'
+            'Pim\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository'
         )->disableOriginalConstructor()->setMethods(array('applySorterByAttribute'))->getMock();
 
         return $flexibleManager;

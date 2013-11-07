@@ -1,7 +1,7 @@
 <?php
 namespace Oro\Bundle\UserBundle\AttributeType;
 
-use Oro\Bundle\FlexibleEntityBundle\AttributeType\AbstractAttributeType;
+use Pim\Bundle\FlexibleEntityBundle\AttributeType\AbstractAttributeType;
 
 class UserType extends AbstractAttributeType
 {

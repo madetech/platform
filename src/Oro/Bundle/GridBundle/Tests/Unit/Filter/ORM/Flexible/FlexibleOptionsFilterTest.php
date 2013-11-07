@@ -2,10 +2,10 @@
 
 namespace Oro\Bundle\GridBundle\Tests\Unit\Filter\ORM\Flexible;
 
-use Oro\Bundle\FlexibleEntityBundle\Entity\Attribute;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Attribute;
 
-use Oro\Bundle\FlexibleEntityBundle\Entity\AttributeOption;
-use Oro\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityAttributeOptionValue;
+use Pim\Bundle\FlexibleEntityBundle\Entity\AttributeOption;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityAttributeOptionValue;
 
 use Oro\Bundle\FilterBundle\Form\Type\Filter\ChoiceFilterType;
 
@@ -79,7 +79,7 @@ class FlexibleOptionsFilterTest extends FlexibleFilterTestCase
             ->will($this->returnValue($attribute));
 
         $optionsRepository = $this->getMockBuilder(
-            'Oro\Bundle\FlexibleEntityBundle\Entity\Repository\AttributeOptionRepository'
+            'Pim\Bundle\FlexibleEntityBundle\Entity\Repository\AttributeOptionRepository'
         )->disableOriginalConstructor()->getMock();
         $optionsRepository->expects($this->once())->method('findAllForAttributeWithValues')
             ->with($attribute)
@@ -106,13 +106,13 @@ class FlexibleOptionsFilterTest extends FlexibleFilterTestCase
         foreach ($data as $key => $value) {
             /** @var $optionValue AbstractEntityAttributeOptionValue|\PHPUnit_Framework_MockObject_MockObject */
             $optionValue = $this->getMockForAbstractClass(
-                'Oro\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityAttributeOptionValue'
+                'Pim\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityAttributeOptionValue'
             );
             $optionValue->setValue($value);
 
             /** @var $option AttributeOption|\PHPUnit_Framework_MockObject_MockObject */
             $option = $this->getMock(
-                'Oro\Bundle\FlexibleEntityBundle\Entity\AttributeOption',
+                'Pim\Bundle\FlexibleEntityBundle\Entity\AttributeOption',
                 array('getOptionValue')
             );
             $option->setId($key);

@@ -10,11 +10,11 @@ use Symfony\Component\Security\Core\SecurityContextInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityRepository;
 
-use Oro\Bundle\FlexibleEntityBundle\Form\Type\FlexibleType;
+use Pim\Bundle\FlexibleEntityBundle\Form\Type\FlexibleType;
 use Oro\Bundle\UserBundle\Form\EventListener\UserSubscriber;
 use Oro\Bundle\UserBundle\Entity\User;
 use Oro\Bundle\UserBundle\Form\Type\EmailType;
-use Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManager;
+use Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManager;
 
 class UserType extends FlexibleType
 {

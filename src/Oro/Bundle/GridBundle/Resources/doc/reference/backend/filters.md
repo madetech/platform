@@ -96,31 +96,31 @@ services:
 
     oro_grid.orm.filter.type.flexible_number:
         class:     Oro\Bundle\GridBundle\Filter\ORM\Flexible\FlexibleNumberFilter
-        arguments: ["@oro_flexibleentity.registry", "@oro_grid.orm.filter.type.number"]
+        arguments: ["@pim_flexibleentity.registry", "@oro_grid.orm.filter.type.number"]
         tags:
             - { name: oro_grid.filter.type, alias: oro_grid_orm_flexible_number }
 
     oro_grid.orm.filter.type.flexible_string:
         class:     Oro\Bundle\GridBundle\Filter\ORM\Flexible\FlexibleStringFilter
-        arguments: ["@oro_flexibleentity.registry", "@oro_grid.orm.filter.type.string"]
+        arguments: ["@pim_flexibleentity.registry", "@oro_grid.orm.filter.type.string"]
         tags:
             - { name: oro_grid.filter.type, alias: oro_grid_orm_flexible_string }
 
     oro_grid.orm.filter.type.flexible_date_range:
         class:     Oro\Bundle\GridBundle\Filter\ORM\Flexible\FlexibleDateRangeFilter
-        arguments: ["@oro_flexibleentity.registry", "@oro_grid.orm.filter.type.date_range"]
+        arguments: ["@pim_flexibleentity.registry", "@oro_grid.orm.filter.type.date_range"]
         tags:
             - { name: oro_grid.filter.type, alias: oro_grid_orm_flexible_date_range }
 
     oro_grid.orm.filter.type.flexible_datetime_range:
         class:     Oro\Bundle\GridBundle\Filter\ORM\Flexible\FlexibleDateTimeRangeFilter
-        arguments: ["@oro_flexibleentity.registry", "@oro_grid.orm.filter.type.datetime_range"]
+        arguments: ["@pim_flexibleentity.registry", "@oro_grid.orm.filter.type.datetime_range"]
         tags:
             - { name: oro_grid.filter.type, alias: oro_grid_orm_flexible_datetime_range }
 
     oro_grid.orm.filter.type.flexible_options:
         class:     Oro\Bundle\GridBundle\Filter\ORM\Flexible\FlexibleOptionsFilter
-        arguments: ["@oro_flexibleentity.registry", "@oro_grid.orm.filter.type.choice"]
+        arguments: ["@pim_flexibleentity.registry", "@oro_grid.orm.filter.type.choice"]
         tags:
             - { name: oro_grid.filter.type, alias: oro_grid_orm_flexible_options }
 ```

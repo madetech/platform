@@ -8,7 +8,7 @@ use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\QueryBuilder;
 
-use Oro\Bundle\FlexibleEntityBundle\Model\FlexibleValueInterface;
+use Pim\Bundle\FlexibleEntityBundle\Model\FlexibleValueInterface;
 
 use Oro\Bundle\SearchBundle\Engine\Indexer;
 

@@ -14,7 +14,7 @@ class FlexibleEntityFilter extends AbstractFlexibleFilter
     /**
      * The attribute defining the entity linked
      *
-     * @var \Oro\Bundle\FlexibleEntityBundle\Model\AbstractAttribute
+     * @var \Pim\Bundle\FlexibleEntityBundle\Model\AbstractAttribute
      */
     protected $attribute;
 
@@ -72,7 +72,7 @@ class FlexibleEntityFilter extends AbstractFlexibleFilter
     /**
      * Get the attribute linked to the flexible entity filter
      *
-     * @return \Oro\Bundle\FlexibleEntityBundle\Model\AbstractAttribute
+     * @return \Pim\Bundle\FlexibleEntityBundle\Model\AbstractAttribute
      */
     protected function getAttribute()
     {

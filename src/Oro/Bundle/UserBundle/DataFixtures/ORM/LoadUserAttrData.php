@@ -36,14 +36,14 @@ class LoadUserAttrData extends AbstractFixture implements ContainerAwareInterfac
         $sm = $fm->getStorageManager();
 
         $attr = $fm
-            ->createAttribute('oro_flexibleentity_text')
+            ->createAttribute('pim_flexibleentity_text')
             ->setCode('company')
             ->setLabel('Company');
 
         $sm->persist($attr);
 
         $attr = $fm
-            ->createAttribute('oro_flexibleentity_simpleselect')
+            ->createAttribute('pim_flexibleentity_simpleselect')
             ->setCode('gender')
             ->setLabel('Gender')
             ->addOption(

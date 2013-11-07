@@ -6,9 +6,9 @@ use Doctrine\ORM\QueryBuilder;
 
 use Symfony\Component\Translation\TranslatorInterface;
 
-use Oro\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository;
-use Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManagerRegistry;
-use Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManager;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository;
+use Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManagerRegistry;
+use Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManager;
 
 use Oro\Bundle\GridBundle\Datagrid\ORM\ProxyQuery;
 use Oro\Bundle\GridBundle\Filter\ORM\Flexible\AbstractFlexibleFilter;
@@ -62,7 +62,7 @@ abstract class FlexibleFilterTestCase extends \PHPUnit_Framework_TestCase
     protected function createFlexibleEntityRepository()
     {
         return $this->getMockBuilder(
-            'Oro\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository'
+            'Pim\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository'
         )->setMethods(array('applyFilterByAttribute'))->disableOriginalConstructor()->getMock();
     }
 
@@ -72,7 +72,7 @@ abstract class FlexibleFilterTestCase extends \PHPUnit_Framework_TestCase
      */
     protected function createFlexibleManager(FlexibleEntityRepository $entityRepository)
     {
-        $flexibleManager = $this->getMockBuilder('Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManager')
+        $flexibleManager = $this->getMockBuilder('Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManager')
             ->setMethods(
                 array(
                     'getFlexibleRepository', 'getAttributeRepository',
@@ -101,7 +101,7 @@ abstract class FlexibleFilterTestCase extends \PHPUnit_Framework_TestCase
     protected function createFlexibleRegistry(FlexibleManager $flexibleManager, $flexibleName)
     {
         $flexibleRegistry = $this->getMock(
-            'Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManagerRegistry',
+            'Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManagerRegistry',
             array('getManager')
         );
         $flexibleRegistry->expects($this->any())

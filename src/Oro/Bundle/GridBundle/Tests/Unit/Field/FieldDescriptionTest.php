@@ -3,7 +3,7 @@
 namespace Oro\Bundle\GridBundle\Tests\Unit\Field;
 
 use Oro\Bundle\GridBundle\Field\FieldDescription;
-use Oro\Bundle\FlexibleEntityBundle\AttributeType\AbstractAttributeType;
+use Pim\Bundle\FlexibleEntityBundle\AttributeType\AbstractAttributeType;
 
 /**
  * @SuppressWarnings(PHPMD.TooManyMethods)

@@ -78,7 +78,7 @@ services:
         class: %oro_user.form.type.user_value.class%
         arguments:
             - @oro_user.manager.flexible
-            - @oro_flexibleentity.value_form.value_subscriber
+            - @pim_flexibleentity.value_form.value_subscriber
         tags:
             - { name: form.type, alias: oro_user_user_value }
 

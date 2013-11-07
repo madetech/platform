@@ -7,9 +7,9 @@ use Symfony\Component\DependencyInjection\Reference;
 
 class AddFlexibleManagerCompilerPass extends AbstractDatagridManagerCompilerPass
 {
-    const FLEXIBLE_MANAGER_FACTORY_KEY    = 'oro_flexibleentity.registry';
+    const FLEXIBLE_MANAGER_FACTORY_KEY    = 'pim_flexibleentity.registry';
     const FLEXIBLE_MANAGER_FACTORY_METHOD = 'getManager';
-    const FLEXIBLE_MANAGER_CLASS          = 'Oro\\Bundle\\FlexibleEntityBundle\\Manager\\FlexibleManager';
+    const FLEXIBLE_MANAGER_CLASS          = 'Pim\\Bundle\\FlexibleEntityBundle\\Manager\\FlexibleManager';
     const FLEXIBLE_MANAGER_ATTRIBUTE      = 'flexible_manager';
     const FLEXIBLE_ATTRIBUTE              = 'flexible';
     const ENTITY_NAME_ATTRIBUTE           = 'entity_name';

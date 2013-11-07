@@ -7,7 +7,7 @@ use JMS\Serializer\Annotation\Exclude;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\MappedSuperclass(repositoryClass="Oro\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository")
+ * @ORM\MappedSuperclass(repositoryClass="Pim\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository")
  */
 class UserSoap extends User
 {

@@ -8,8 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 use Oro\Bundle\DataAuditBundle\Metadata\Annotation as Oro;
 
-use Oro\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityFlexibleValue;
-use Oro\Bundle\FlexibleEntityBundle\Entity\Attribute;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Mapping\AbstractEntityFlexibleValue;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Attribute;
 
 /**
  * @ORM\Table(name="oro_user_value")
@@ -21,7 +21,7 @@ class UserValue extends AbstractEntityFlexibleValue
     /**
      * @var Attribute $attribute
      *
-     * @ORM\ManyToOne(targetEntity="Oro\Bundle\FlexibleEntityBundle\Entity\Attribute")
+     * @ORM\ManyToOne(targetEntity="Pim\Bundle\FlexibleEntityBundle\Entity\Attribute")
      * @ORM\JoinColumn(name="attribute_id", referencedColumnName="id", onDelete="CASCADE")
      */
     protected $attribute;
@@ -38,7 +38,7 @@ class UserValue extends AbstractEntityFlexibleValue
      *
      * @var Collection $options
      *
-     * @ORM\ManyToMany(targetEntity="Oro\Bundle\FlexibleEntityBundle\Entity\AttributeOption")
+     * @ORM\ManyToMany(targetEntity="Pim\Bundle\FlexibleEntityBundle\Entity\AttributeOption")
      * @ORM\JoinTable(
      *     name="oro_user_value_option",
      *     joinColumns={@ORM\JoinColumn(name="value_id", referencedColumnName="id", onDelete="CASCADE")},

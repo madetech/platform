@@ -194,15 +194,15 @@
     {% endspaceless %}
 {% endblock form_label %}
 
-{% block oro_flexibleentity_email_collection_widget %}
+{% block pim_flexibleentity_email_collection_widget %}
     {% set subform = form.collection %}
     {{ block('collection_render') }}
-{%  endblock oro_flexibleentity_email_collection_widget %}
+{%  endblock pim_flexibleentity_email_collection_widget %}
 
-{% block oro_flexibleentity_phone_collection_widget %}
+{% block pim_flexibleentity_phone_collection_widget %}
     {% set subform = form.collection %}
     {{ block('collection_render') }}
-{%  endblock oro_flexibleentity_phone_collection_widget %}
+{%  endblock pim_flexibleentity_phone_collection_widget %}
 
 {% block collection_render %}
     {% spaceless %}

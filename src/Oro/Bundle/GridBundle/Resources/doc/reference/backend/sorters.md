@@ -40,5 +40,5 @@ services:
     oro_grid.sorter.flexible:
         class:     %oro_grid.sorter.flexible.class%
         scope:     prototype
-        arguments: ["@oro_flexibleentity.registry"]
+        arguments: ["@pim_flexibleentity.registry"]
 ```

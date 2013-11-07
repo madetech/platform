@@ -8,10 +8,10 @@ use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
-use Oro\Bundle\FlexibleEntityBundle\Model\AbstractAttributeOption;
-use Oro\Bundle\FlexibleEntityBundle\Model\AbstractAttribute;
-use Oro\Bundle\FlexibleEntityBundle\Model\AbstractFlexible;
-use Oro\Bundle\FlexibleEntityBundle\Model\FlexibleValueInterface;
+use Pim\Bundle\FlexibleEntityBundle\Model\AbstractAttributeOption;
+use Pim\Bundle\FlexibleEntityBundle\Model\AbstractAttribute;
+use Pim\Bundle\FlexibleEntityBundle\Model\AbstractFlexible;
+use Pim\Bundle\FlexibleEntityBundle\Model\FlexibleValueInterface;
 
 use Oro\Bundle\UserBundle\Entity\UserApi;
 use Oro\Bundle\UserBundle\Entity\UserManager;
@@ -167,7 +167,7 @@ class LoadUserData extends AbstractFixture implements ContainerAwareInterface, O
      */
     private function findAttributeOptionWithValue($entityManager, AbstractAttribute $attribute, $value)
     {
-        /** @var $options \Oro\Bundle\FlexibleEntityBundle\Entity\AttributeOption[] */
+        /** @var $options \Pim\Bundle\FlexibleEntityBundle\Entity\AttributeOption[] */
         $options = $entityManager->getAttributeOptionRepository()->findBy(
             array('attribute' => $attribute)
         );

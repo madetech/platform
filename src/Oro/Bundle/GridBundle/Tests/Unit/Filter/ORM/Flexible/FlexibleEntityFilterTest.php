@@ -4,7 +4,7 @@ namespace Oro\Bundle\GridBundle\Tests\Unit\Filter\ORM\Flexible;
 
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Common\Collections\ArrayCollection;
-use Oro\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository;
 use Oro\Bundle\FilterBundle\Form\Type\Filter\ChoiceFilterType;
 use Oro\Bundle\GridBundle\Filter\ORM\Flexible\FlexibleEntityFilter;
 use Oro\Bundle\GridBundle\Filter\ORM\EntityFilter;
@@ -176,11 +176,11 @@ class FlexibleEntityFilterTest extends FlexibleFilterTestCase
     /**
      * Create attribute mock
      *
-     * @return Oro\Bundle\FlexibleEntityBundle\Model\AbstractAttribute
+     * @return Pim\Bundle\FlexibleEntityBundle\Model\AbstractAttribute
      */
     protected function createAttribute()
     {
-        $attribute = $this->getMockforAbstractClass('Oro\Bundle\FlexibleEntityBundle\Model\AbstractAttribute');
+        $attribute = $this->getMockforAbstractClass('Pim\Bundle\FlexibleEntityBundle\Model\AbstractAttribute');
 
         $attribute->expects($this->any())
                   ->method('getId')

@@ -6,7 +6,7 @@ use Symfony\Component\Form\FormView;
 
 use Doctrine\Common\Collections\Collection;
 
-use Oro\Bundle\FlexibleEntityBundle\Model\FlexibleValueInterface;
+use Pim\Bundle\FlexibleEntityBundle\Model\FlexibleValueInterface;
 use Oro\Bundle\UserBundle\Provider\GenderProvider;
 
 class OroUserExtension extends \Twig_Extension

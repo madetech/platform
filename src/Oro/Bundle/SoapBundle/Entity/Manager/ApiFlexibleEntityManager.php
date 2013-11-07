@@ -4,8 +4,8 @@ namespace Oro\Bundle\SoapBundle\Entity\Manager;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\ORM\QueryBuilder;
-use Oro\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository;
-use Oro\Bundle\FlexibleEntityBundle\Manager\FlexibleManager;
+use Pim\Bundle\FlexibleEntityBundle\Entity\Repository\FlexibleEntityRepository;
+use Pim\Bundle\FlexibleEntityBundle\Manager\FlexibleManager;
 
 class ApiFlexibleEntityManager extends ApiEntityManager
 {
