@@ -34,7 +34,8 @@ class SorterFactory implements SorterFactoryInterface
         }
 
         if ($this->isFlexible($field)) {
-            $sorter = $this->container->get('oro_grid.sorter.flexible');
+            // TODO: to move in PIM !
+            $sorter = $this->container->get('pim_grid.sorter.flexible');
         } else {
             $sorter = $this->container->get('oro_grid.sorter');
         }
