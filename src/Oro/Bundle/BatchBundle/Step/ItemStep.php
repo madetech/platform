@@ -118,21 +118,15 @@ class ItemStep extends AbstractStep
         $configuration = array();
 
         if ($this->reader instanceof AbstractConfigurableStepElement) {
-            $configuration['reader'] = $this->reader->getConfiguration();
-        } else {
-            $configuration['reader'] = array();
+            $configuration = array_merge($configuration, $this->reader->getConfiguration());
         }
 
         if ($this->processor instanceof AbstractConfigurableStepElement) {
-            $configuration['processor'] = $this->processor->getConfiguration();
-        } else {
-            $configuration['processor'] = array();
+            $configuration = array_merge($configuration, $this->processor->getConfiguration());
         }
 
         if ($this->writer instanceof AbstractConfigurableStepElement) {
-            $configuration['writer'] = $this->writer->getConfiguration();
-        } else {
-            $configuration['writer'] = array();
+            $configuration = array_merge($configuration, $this->writer->getConfiguration());
         }
 
         return $configuration;
@@ -143,16 +137,16 @@ class ItemStep extends AbstractStep
      */
     public function setConfiguration(array $config)
     {
-        if ($this->reader instanceof AbstractConfigurableStepElement && !empty($config['reader'])) {
-            $this->reader->setConfiguration($config['reader']);
+        if ($this->reader instanceof AbstractConfigurableStepElement) {
+            $this->reader->setConfiguration($config);
         }
 
-        if ($this->processor instanceof AbstractConfigurableStepElement && !empty($config['processor'])) {
-            $this->processor->setConfiguration($config['processor']);
+        if ($this->processor instanceof AbstractConfigurableStepElement) {
+            $this->processor->setConfiguration($config);
         }
 
-        if ($this->writer instanceof AbstractConfigurableStepElement && !empty($config['writer'])) {
-            $this->writer->setConfiguration($config['writer']);
+        if ($this->writer instanceof AbstractConfigurableStepElement) {
+            $this->writer->setConfiguration($config);
         }
     }
 
