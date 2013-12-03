@@ -287,7 +287,11 @@ class Job implements JobInterface
     {
         $result = array();
         foreach ($this->steps as $step) {
-            $result = array_merge($result, $step->getConfiguration());
+            foreach ($step->getConfiguration() as $key => $value) {
+                if (!isset($result[$key]) || $value) {
+                    $result[$key] = $value;
+                }
+            }
         }
 
         return $result;

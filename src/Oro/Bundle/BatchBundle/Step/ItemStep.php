@@ -115,18 +115,21 @@ class ItemStep extends AbstractStep
      */
     public function getConfiguration()
     {
+        $stepElements = array(
+            $this->reader,
+            $this->writer,
+            $this->processor
+        );
         $configuration = array();
 
-        if ($this->reader instanceof AbstractConfigurableStepElement) {
-            $configuration = array_merge($configuration, $this->reader->getConfiguration());
-        }
-
-        if ($this->processor instanceof AbstractConfigurableStepElement) {
-            $configuration = array_merge($configuration, $this->processor->getConfiguration());
-        }
-
-        if ($this->writer instanceof AbstractConfigurableStepElement) {
-            $configuration = array_merge($configuration, $this->writer->getConfiguration());
+        foreach ($stepElements as $stepElement) {
+            if ($stepElement instanceof AbstractConfigurableStepElement) {
+                foreach ($stepElement->getConfiguration() as $key => $value) {
+                    if (!isset($configuration[$key]) || $value) {
+                        $configuration[$key] = $value;
+                    }
+                }
+            }
         }
 
         return $configuration;
@@ -137,16 +140,16 @@ class ItemStep extends AbstractStep
      */
     public function setConfiguration(array $config)
     {
-        if ($this->reader instanceof AbstractConfigurableStepElement) {
-            $this->reader->setConfiguration($config);
-        }
+        $stepElements = array(
+            $this->reader,
+            $this->writer,
+            $this->processor
+        );
 
-        if ($this->processor instanceof AbstractConfigurableStepElement) {
-            $this->processor->setConfiguration($config);
-        }
-
-        if ($this->writer instanceof AbstractConfigurableStepElement) {
-            $this->writer->setConfiguration($config);
+        foreach ($stepElements as $stepElement) {
+            if ($stepElement instanceof AbstractConfigurableStepElement) {
+                $stepElement->setConfiguration($config);
+            }
         }
     }
 
