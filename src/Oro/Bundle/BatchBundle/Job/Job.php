@@ -144,8 +144,8 @@ class Job implements JobInterface
     /**
      * Convenience method for adding a single step to the job.
      *
-     * @param string $stepName
-     * @param StepInterface $step a {@link Step} to add
+     * @param string        $stepName
+     * @param StepInterface $step     a {@link Step} to add
      */
     public function addStep($stepName, StepInterface $step)
     {
@@ -287,7 +287,11 @@ class Job implements JobInterface
     {
         $result = array();
         foreach ($this->steps as $step) {
-            $result[$step->getName()] = $step->getConfiguration();
+            foreach ($step->getConfiguration() as $key => $value) {
+                if (!isset($result[$key]) || $value) {
+                    $result[$key] = $value;
+                }
+            }
         }
 
         return $result;
@@ -296,18 +300,23 @@ class Job implements JobInterface
     /**
      * Set the steps configuration
      *
-     * @param array $steps
+     * @param array $config
      */
-    public function setConfiguration(array $steps)
+    public function setConfiguration(array $config)
     {
-        foreach ($steps as $name => $config) {
-            $step = $this->getStep($name);
-            if (!$step) {
-                throw new \InvalidArgumentException(sprintf('Unknown step "%s"', $name));
-            }
-
+        foreach ($this->steps as $step) {
             $step->setConfiguration($config);
         }
+    }
+
+    /**
+     * A convenience method to synchronize the configuration between steps
+     * Calls 'getConfiguration' to aggregate the step configuration and
+     * 'setConFiguration' to pass the complete configuration to all of the steps
+     */
+    public function syncConfiguration()
+    {
+        $this->setConfiguration($this->getConfiguration());
     }
 
     /**
