@@ -161,7 +161,7 @@ abstract class AbstractMapper
             if (count($attributes)) {
                 /** @var $attribute \Pim\Bundle\FlexibleEntityBundle\Entity\Attribute */
                 foreach ($attributes as $attribute) {
-                    if ($attribute->getSearchable() && $value = $object->getValue($attribute->getCode())) {
+                    if ($attribute->isSearchable() && $value = $object->getValue($attribute->getCode())) {
                         $attributeType = $attribute->getBackendType();
 
                         switch ($attributeType) {
